@@ -1,3 +1,101 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+* > * {
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+  min-height: 100%;
+}
+
+.sticky-height {
+  height: 50px;
+}
+
+:root {
+  --headC: #08102b;
+  --bodyC: #08102b;
+  --bodyCa: #767676;
+  --bodyB: #fffdfc;
+  --linkC: #0b57cf;
+  --linkB: #0b57cf;
+  --iconC: #08102b;
+  --iconCa: #08102b;
+  --iconCs: #767676;
+  --headerC: #08102b;
+  --headerT: 16px;
+  --headerW: 400;
+  --headerB: #fffdfc;
+  --headerL: 1px;
+  --headerI: #08102b;
+  --headerH: 60px;
+  --headerHi: -60px;
+  --headerHm: 60px;
+  --notifH: 53px;
+  --notifU: #e8f0fe;
+  --notifC: #3c4043;
+  --notifL: #0b57cf;
+  --contentB: #fffdfc;
+  --contentL: #e6e6e6;
+  --contentW: 1280px;
+  --sideW: 300px;
+  --transB: rgba(0, 0, 0, 0.05);
+  --pageW: 780px;
+  --postW: 780px;
+  --postT: 36px;
+  --postF: 16px;
+  --postTm: 28px;
+  --postFm: 15px;
+  --widgetT: 15px;
+  --widgetTw: 400;
+  --widgetTa: 25px;
+  --widgetTac: #989b9f;
+  --navW: 230px;
+  --navT: #08102b;
+  --navI: #08102b;
+  --navB: #fffdfc;
+  --navL: 1px;
+  --srchI: #08102b;
+  --srchB: #fffdfc;
+  --mobT: #08102b;
+  --mobHv: #f1f1f0;
+  --mobB: #fffdfc;
+  --mobL: 0px;
+  --mobBr: 12px;
+  --fotT: #08102b;
+}
