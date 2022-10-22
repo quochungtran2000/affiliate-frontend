@@ -79,22 +79,28 @@ export default function Header() {
             </form> */}
 
             <div className="flex items-center">
-              <span
-                className="material-symbols-outlined mr-2 dark:block hidden"
-                onClick={() => {
-                  document.documentElement.classList.remove("dark");
-                }}
-              >
-                light_mode
+              <span className="dark:block hidden">
+                <span
+                  className="material-symbols-outlined mr-2"
+                  onClick={() => {
+                    document.documentElement.classList.remove("dark");
+                  }}
+                >
+                  light_mode
+                </span>
               </span>
-              <span
-                className="material-symbols-outlined mr-2 dark:hidden block"
-                onClick={() => {
-                  document.documentElement.classList.add("dark");
-                }}
-              >
-                dark_mode
+
+              <span className="dark:hidden block">
+                <span
+                  className="material-symbols-outlined mr-2"
+                  onClick={() => {
+                    document.documentElement.classList.add("dark");
+                  }}
+                >
+                  dark_mode
+                </span>
               </span>
+
               <span className="material-symbols-outlined mr-2">
                 notifications
               </span>

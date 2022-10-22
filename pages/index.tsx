@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { Layout } from "../components/Layout";
 import { background, headerHeight, shadow } from "../constants";
+import axios from 'axios';
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +14,12 @@ const Home: NextPage = () => {
             Quảng cáo sẽ hiện ở đây
           </div>
         </div>
+        <button style={{padding: '15px'}} onClick={() => window.open("http://localhost:2701/api/v1/auth/google", "_self")}>Log in Google</button>
+          <div></div>
+          {/* <button  style={{padding: '15px'}}  onClick={async () => await window.open('http://localhost:2701/api/v1/auth/logout', "_self")}>Log out</button> */}
+        <button style={{ padding: '15px' }} onClick={async () => await axios.get("http://localhost:2701/api/v1/auth/logout", { withCredentials: true })}>Log out By get</button>
+        <button style={{ padding: '15px' }} onClick={async () => await window.open("http://localhost:2701/api/v1/auth/logout", "_self")}>Log out By window</button>
+        <button style={{ padding: '15px' }} onClick={async () => await axios.get("http://localhost:2701/api/v1/auth/me",  { withCredentials: true })}>get User</button>
         <div className="grid md:grid-cols-3">
           <div className="md:col-span-2 p-4">
             <div className="mb-8">
@@ -136,7 +143,11 @@ const Home: NextPage = () => {
                 {Array(5)
                   .fill(0)
                   .map((x, index) => (
-                    <a href="#" className={`w-full hover:bg-gray-50 ${shadow}`}>
+                    <a
+                      href="#"
+                      className={`w-full hover:bg-gray-50 ${shadow}`}
+                      key={index}
+                    >
                       <div className="grid grid-cols-6 p-5 gap-y-2">
                         <div>
                           <img

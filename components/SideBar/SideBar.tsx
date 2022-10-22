@@ -44,7 +44,7 @@ export default function SideBar() {
         }`}
       >
         <ul className="space-y-1 text-sm w-full">
-          <li className="rounded-sm p-4">
+          <li className="rounded-sm p-4" onClick={onClick}>
             <span className="material-symbols-outlined">add</span>
           </li>
         </ul>
