@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { background, headerHeight, shadow, transition } from "../../constants";
+import { background, headerHeight, transition } from "../../constants";
 import { menu } from "../../constants/menu";
 
 export default function SideBar() {
   const [open, setOpen] = useState<boolean>(true);
   const onClick = () => setOpen(!open);
   return (
-    <div id="sidebar" className={`flex relative ${shadow}`}>
+    <div id="sidebar" className={`relative hidden md:flex`}>
       <div
-        className={`${transition} shrink-0 relative h-screen-purple ${shadow} ${background} ${
+        className={`${transition} shrink-0 relative h-screen-purple border-r border-gray-200 dark:border-gray-700 ${
           open ? "w-56" : "w-14"
         }`}
       >
@@ -45,7 +45,7 @@ export default function SideBar() {
       >
         <ul className="space-y-1 text-sm w-full">
           <li className="rounded-sm p-4">
-            <span className="material-symbols-outlined">add</span>
+            <span className="material-symbols-outlined text-sm">add</span>
           </li>
         </ul>
       </div>
