@@ -15,28 +15,14 @@ const Home: NextPage = ({
       {/* <div className="mx-auto lg:px-12 xl:px-12 md:px-8 sm:px-4"> */}
       <BannerAds />
       <div className="grid md:grid-cols-3">
-        <div className="md:col-span-2 py-4 pr-4">
+        <div className="md:col-span-2 py-4 px-4 md:pl-0 md:pr-4">
           <ListMerchant merchants={merchants} />
           <ContentAds />
           <CouponTabs />
-          <div className="mb-8">
-            <div className="mb-8">
-              <span className="text-sm font-bold font-sans mb-8 border-b pb-2">
-                Mã khuyễn mãi
-              </span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-              {Array(10)
-                .fill(0)
-                .map((_, index) => (
-                  <ContentCoupon key={index} />
-                ))}
-            </div>
-          </div>
           <ContentAds />
         </div>
 
-        <div className="gird py-4 pl-4 relative">
+        <div className="gird py-4 px-4 md:pl-4 md:pr-0 relative">
           <SideBarAds />
           <div className="mb-8">
             <div className="border-b border-gray-200 dark:border-gray-700 mb-8">
@@ -49,7 +35,7 @@ const Home: NextPage = ({
               </ul>
             </div>
             <div className="grid grid-cols-1 gap-2 w-full mb-8">
-              {Array(5)
+              {Array(2)
                 .fill(0)
                 .map((_, index) => (
                   <SideBarCoupon key={index} />

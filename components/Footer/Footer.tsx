@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="py-6 mx-auto">
-      <div className="container px-16 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50 border-t border-t-slate-400">
+      <div className="container mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50 border-t border-t-slate-400">
         <div className="grid justify-center pt-6 lg:justify-between">
           <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
             <span>©2022 All rights reserved</span>

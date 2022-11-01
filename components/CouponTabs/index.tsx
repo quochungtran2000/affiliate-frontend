@@ -1,120 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
+import ContentCoupon from "../Coupon/ContentCoupon";
 
 export default function CouponTabs() {
+  const [tab, setTab] = useState<number>(1);
+
+  const handleClick = (number: number) => setTab(number);
+  const activeClass =
+    "inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500";
+  const unactiveClass =
+    "inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700";
+
   return (
     <div className="mb-8">
       <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
-        <ul
-          className="flex flex-wrap -mb-px text-sm font-medium text-center"
-          id="myTab"
-          data-tabs-toggle="#myTabContent"
-          role="tablist"
-        >
-          <li className="mr-2" role="presentation">
-            <button
-              className="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
-              id="profile-tab"
-              data-tabs-target="#profile"
-              type="button"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="true"
-            >
+        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center">
+          <li className="mr-2" onClick={() => handleClick(1)}>
+            <button className={tab === 1 ? activeClass : unactiveClass}>
               Phổ biến nhất
             </button>
           </li>
-          <li className="mr-2" role="presentation">
-            <button
-              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
-              id="dashboard-tab"
-              data-tabs-target="#dashboard"
-              type="button"
-              role="tab"
-              aria-controls="dashboard"
-              aria-selected="false"
-            >
+          <li className="mr-2" onClick={() => handleClick(2)}>
+            <button className={tab === 2 ? activeClass : unactiveClass}>
               Sắp diễn ra
             </button>
           </li>
-          <li className="mr-2" role="presentation">
-            <button
-              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
-              id="settings-tab"
-              data-tabs-target="#settings"
-              type="button"
-              role="tab"
-              aria-controls="settings"
-              aria-selected="false"
-            >
+          <li className="mr-2" onClick={() => handleClick(3)}>
+            <button className={tab === 3 ? activeClass : unactiveClass}>
               Mới nhất
             </button>
           </li>
         </ul>
       </div>
-      <div id="myTabContent">
+      <div>
         <div
-          className="p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
-          id="profile"
-          role="tabpanel"
-          aria-labelledby="profile-tab"
+          className={`grid-cols-1 md:grid-cols-2 gap-4 w-full ${
+            tab === 1 ? "grid" : "hidden"
+          }`}
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            This is some placeholder content the{" "}
-            <strong className="font-medium text-gray-800 dark:text-white">
-              Profile tab's associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
+          <ContentCoupon />
+          <ContentCoupon />
         </div>
         <div
-          className="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
-          id="dashboard"
-          role="tabpanel"
-          aria-labelledby="dashboard-tab"
+          className={`grid grid-cols-1 md:grid-cols-2 gap-4 w-full ${
+            tab === 2 ? "grid" : "hidden"
+          }`}
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            This is some placeholder content the{" "}
-            <strong className="font-medium text-gray-800 dark:text-white">
-              Dashboard tab's associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
+          <ContentCoupon />
+          <ContentCoupon />
+          <ContentCoupon />
+          <ContentCoupon />
         </div>
         <div
-          className="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
-          id="settings"
-          role="tabpanel"
-          aria-labelledby="settings-tab"
+          className={`grid grid-cols-1 md:grid-cols-2 gap-4 w-full ${
+            tab === 3 ? "grid" : "hidden"
+          }`}
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            This is some placeholder content the{" "}
-            <strong className="font-medium text-gray-800 dark:text-white">
-              Settings tab's associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
-        </div>
-        <div
-          className="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
-          id="contacts"
-          role="tabpanel"
-          aria-labelledby="contacts-tab"
-        >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            This is some placeholder content the{" "}
-            <strong className="font-medium text-gray-800 dark:text-white">
-              Contacts tab's associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
+          <ContentCoupon />
+          <ContentCoupon />
+          <ContentCoupon />
+          <ContentCoupon />
+          <ContentCoupon />
+          <ContentCoupon />
         </div>
       </div>
     </div>

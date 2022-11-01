@@ -18,8 +18,8 @@ export default function Header() {
 
             <div className="ml-4 md:mr-8">ChiaSeMa</div>
           </div>
-          <div className="flex-1 md:ml-16 flex justify-between">
-            <span className="relative">
+          <div className="flex-1 md:ml-16 flex justify-end md:justify-between">
+            <span className="relative hidden md:block">
               <span className="absolute inset-y-0 flex items-center pl-2 mx-auto">
                 <button
                   type="submit"
