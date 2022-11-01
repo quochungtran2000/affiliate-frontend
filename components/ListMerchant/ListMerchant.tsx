@@ -9,9 +9,9 @@ export default function ListMerchant({ merchants }: ListMerchantProps) {
   return (
     <div className="mb-8">
       <div className="border-b border-gray-200 dark:border-gray-700 mb-8">
-        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center">
+        <ul className="flex flex-wrap -mb-px text-xs sm:text-sm font-medium text-center">
           <li className="mr-2" role="presentation">
-            <button className="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
+            <button className="inline-block p-2 sm:p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
               Nhà cung cấp nổi bật
             </button>
           </li>

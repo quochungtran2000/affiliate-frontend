@@ -9,7 +9,7 @@ export default function SideBar() {
     <div id="sidebar" className={`relative hidden md:flex  border-r border-gray-200 dark:border-gray-700 `}>
       <div
         className={`${transition} shrink-0 relative h-screen-purple ${
-          open ? "w-56" : "w-14"
+          open ? "w-48" : "w-14"
         }`}
       >
         <div className={`flex sticky top-[${headerHeight}]`}>

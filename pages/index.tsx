@@ -12,7 +12,6 @@ const Home: NextPage = ({
 }: InferGetStaticPropsType<GetStaticProps>) => {
   return (
     <Layout>
-      {/* <div className="mx-auto lg:px-12 xl:px-12 md:px-8 sm:px-4"> */}
       <BannerAds />
       <div className="grid md:grid-cols-3">
         <div className="md:col-span-2 py-4 px-4 md:pl-0 md:pr-4">

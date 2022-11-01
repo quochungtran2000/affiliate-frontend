@@ -37,7 +37,7 @@ export default function SideBarCoupon() {
           alt=""
           className="w-full rounded-t-lg"
         />
-        <p className="p-2 rounded-b-lg">Ưu đãi tháng 11 Highlands coffee mua 1 tặng 1</p>
+        <p className="p-2 rounded-b-lg text-xs sm:text-sm">Ưu đãi tháng 11 Highlands coffee mua 1 tặng 1</p>
       </div>
     </a>
   );

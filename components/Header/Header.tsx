@@ -16,7 +16,7 @@ export default function Header() {
               <span className="material-symbols-outlined">apps</span>
             </label>
 
-            <div className="ml-4 md:mr-8">ChiaSeMa</div>
+            <div className="ml-4 md:mr-8 text-base">ChiaSeMa</div>
           </div>
           <div className="flex-1 md:ml-16 flex justify-end md:justify-between">
             <span className="relative hidden md:block">
@@ -39,7 +39,7 @@ export default function Header() {
                 type="search"
                 name="Search"
                 placeholder="Search..."
-                className="w-full py-2 pr-3 pl-10 text-sm rounded-full sm:w-96 focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900 border border-gray-200 dark:border-gray-700"
+                className="w-full py-2 pr-3 pl-10 text-xs sm:text-sm rounded-full sm:w-96 focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900 border border-gray-200 dark:border-gray-700"
               />
             </span>
 
