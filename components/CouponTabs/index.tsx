@@ -1,8 +1,22 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { Coupon, getCoupons } from "../../api/getCoupons";
 import ContentCoupon from "../Coupon/ContentCoupon";
+import CouponCard from "../Coupon/CouponCard";
 
 export default function CouponTabs() {
   const [tab, setTab] = useState<number>(1);
+  const [coupons, Setcoupons] = useState<Coupon[]>([]);
+
+  const getData = useCallback(() => {
+    getCoupons().then(({ data }) => {
+      Setcoupons(data.data);
+    });
+  }, []);
+  console.log(coupons);
+
+  useEffect(() => {
+    return getData();
+  }, []);
 
   const handleClick = (number: number) => setTab(number);
   const activeClass =
@@ -37,8 +51,9 @@ export default function CouponTabs() {
             tab === 1 ? "grid" : "hidden"
           }`}
         >
-          <ContentCoupon />
-          <ContentCoupon />
+          {coupons.map((coupon, index) => (
+            <CouponCard item={coupon} key={index} />
+          ))}
         </div>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-4 w-full ${

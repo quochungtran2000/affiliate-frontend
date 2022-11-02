@@ -99,3 +99,10 @@ div#__next > div {
   --mobBr: 12px;
   --fotT: #08102b;
 }
+
+.text-line-camp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

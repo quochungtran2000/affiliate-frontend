@@ -6,23 +6,29 @@ import SideBarCoupon from "../components/Coupon/SideBarCoupon";
 import ContentCoupon from "../components/Coupon/ContentCoupon";
 import ListMerchant from "../components/ListMerchant/ListMerchant";
 import { getMerchants } from "../api/getMerchants";
+import dynamic from "next/dynamic";
+// import PagebookPage from "../components/FacebookPage/PagebookPage";
+const PagebookPage = dynamic(
+  () => import("../components/FacebookPage/PagebookPage"),
+  { ssr: false }
+);
 
 const Home: NextPage = ({
   merchants,
 }: InferGetStaticPropsType<GetStaticProps>) => {
   return (
     <Layout>
-      <BannerAds />
       <div className="grid md:grid-cols-3">
         <div className="md:col-span-2 py-4 px-4 md:pl-0 md:pr-4">
           <ListMerchant merchants={merchants} />
-          <ContentAds />
+          {/* <ContentAds /> */}
           <CouponTabs />
-          <ContentAds />
+          {/* <ContentAds /> */}
         </div>
 
         <div className="gird py-4 px-4 md:pl-4 md:pr-0 relative">
-          <SideBarAds />
+          {/* <SideBarAds /> */}
+          <PagebookPage />
           <div className="mb-8">
             <div className="border-b border-gray-200 dark:border-gray-700 mb-8">
               <ul className="flex flex-wrap -mb-px text-sm font-medium text-center">
@@ -40,23 +46,17 @@ const Home: NextPage = ({
                   <SideBarCoupon key={index} />
                 ))}
             </div>
-            <SideBarAds />
           </div>
+          {/* <SideBarAds /> */}
         </div>
       </div>
     </Layout>
   );
 };
-// This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries.
+
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
   const { data: response } = await getMerchants();
   const { data: merchants } = response;
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       merchants,

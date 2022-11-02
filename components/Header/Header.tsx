@@ -1,10 +1,10 @@
 import React from "react";
-import { background, headerHeight, text } from "../../constants";
+import { background, headerHeight } from "../../constants";
 
 export default function Header() {
   return (
     <header
-      className={`h-[${headerHeight}] sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 ${background} ${text}`}
+      className={`h-[${headerHeight}] sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 ${background}`}
     >
       <div className="h-full w-full flex justify-center items-center">
         <div className="flex w-full px-4 py-4">
@@ -13,10 +13,14 @@ export default function Header() {
               htmlFor="open-side-bar"
               className="flex justify-between items-center"
             >
-              <span className="material-symbols-outlined">apps</span>
+              <span className="material-symbols-outlined text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">
+                apps
+              </span>
             </label>
 
-            <div className="ml-4 md:mr-8 text-base">ChiaSeMa</div>
+            <div className="ml-4 md:mr-8 text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">
+              ChiaSeMa
+            </div>
           </div>
           <div className="flex-1 md:ml-16 flex justify-end md:justify-between">
             <span className="relative hidden md:block">
@@ -46,7 +50,7 @@ export default function Header() {
             <div className="flex items-center">
               <span className="dark:block hidden">
                 <span
-                  className="material-symbols-outlined mr-2"
+                  className="material-symbols-outlined mr-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                   onClick={() => {
                     document.documentElement.classList.remove("dark");
                   }}
@@ -56,7 +60,7 @@ export default function Header() {
               </span>
               <span className="dark:hidden block">
                 <span
-                  className="material-symbols-outlined mr-2"
+                  className="material-symbols-outlined mr-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                   onClick={() => {
                     document.documentElement.classList.add("dark");
                   }}
@@ -65,7 +69,7 @@ export default function Header() {
                 </span>
               </span>
 
-              <span className="material-symbols-outlined mr-2">
+              <span className="material-symbols-outlined mr-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">
                 notifications
               </span>
 

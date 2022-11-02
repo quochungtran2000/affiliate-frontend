@@ -1,19 +1,30 @@
 import { Footer } from "../Footer";
 import { Header } from "../Header";
 import { NotificationSession } from "../NotificationSession";
-import { SideBar } from "../SideBar";
-import { background } from "../../constants";
+import { WebsiteSideBar } from "../SideBar";
+import { background, text } from "../../constants";
+import { ReactElement } from "react";
+import { BannerAds } from "../Ads";
 
-export default function Layout({ children }: any) {
+type LayoutProps = {
+  children: ReactElement;
+};
+
+export default function Layout({ children }: LayoutProps) {
   return (
-    <div className={`w-full h-full ${background} text-xs sm:text-sm `}>
+    <div className={`w-full h-full ${background}`}>
+      {/** Notification Session */}
       <NotificationSession />
+
       <Header />
+
       <main className="flex relative">
-        <SideBar />
+        {/** SideBar */}
+        <WebsiteSideBar />
 
         <div className="w-full">
           <div className="max-w-5xl mx-auto px-2 sm:px-4 xl:px-0">
+            <BannerAds />
             {children}
             <Footer />
           </div>

@@ -68,14 +68,15 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
         </Head>
+
         <body>
           <Main />
           <NextScript />
         </body>
+
+        {/** facebook customer chat plugin */}
         <div id="fb-root"></div>
-
         <div id="fb-customer-chat" className="fb-customerchat"></div>
-
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -84,7 +85,6 @@ class MyDocument extends Document {
             chatbox.setAttribute("attribution", "biz_inbox");`,
           }}
         ></script>
-
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -103,7 +103,17 @@ class MyDocument extends Document {
                 fjs.parentNode.insertBefore(js, fjs);
               }(document, 'script', 'facebook-jssdk'));`,
           }}
-        ></script>
+        />
+
+        {/** facebook page plugin */}
+
+        <script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=519265053058104&autoLogAppEvents=1"
+          nonce="yA9UcXvW"
+        />
       </Html>
     );
   }

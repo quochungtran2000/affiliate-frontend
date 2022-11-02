@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { background, headerHeight, transition } from "../../constants";
 import { menu } from "../../constants/menu";
 
-export default function SideBar() {
+export default function WebsiteSideBar() {
   const [open, setOpen] = useState<boolean>(true);
   const onClick = () => setOpen(!open);
   return (
-    <div id="sidebar" className={`relative hidden md:flex  border-r border-gray-200 dark:border-gray-700 `}>
+    <div
+      id="website-sidebar"
+      className={`relative hidden md:flex  border-r border-gray-200 dark:border-gray-700 `}
+    >
       <div
         className={`${transition} shrink-0 relative h-screen-purple ${
           open ? "w-48" : "w-14"
@@ -19,7 +22,7 @@ export default function SideBar() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="flex items-center"
+                  className="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   <span className={element.classes}>{element.iconName}</span>
                   <span className={`ml-4 ${!open && "hidden"}`}>

@@ -13,12 +13,12 @@ export default function NotificationSession() {
     >
       <div className="w-full px-4 py-2">
         <div className="flex flex-row items-center">
-          <div className="text-center w-full pr-4 text-sm">
+          <div className="text-center w-full pr-4 text-xs sm:text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
             accusantium.
           </div>
           <div onClick={handleCloseNoti}>
-            <span className="material-symbols-outlined text-sm">close</span>
+            <span className="material-symbols-outlined text-xs sm:text-sm">close</span>
           </div>
         </div>
       </div>
